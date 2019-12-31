@@ -8,6 +8,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 import 'startbootstrap-clean-blog/css/clean-blog.min.css'
 
 import Navigation from '../components/Navigation'
+import Footer from '../components/Footer'
 import Home from '../pages/home/Home'
 import About from '../pages/about/About'
 
@@ -36,10 +37,11 @@ class App extends React.Component {
             <About />
           </Route>
         </Switch>
+
+        <Footer appName={this.state.appName} />
       </Router>
     )
   }
-
 }
 
 export default App;
