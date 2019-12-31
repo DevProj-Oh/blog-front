@@ -1,18 +1,14 @@
 import React from 'react'
-import BackgroundImage from 'startbootstrap-clean-blog/img/about-bg.jpg'
 
 class Header extends React.Component {
 
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const mainHeading = this.props.mainHeading,
-      subHeading = this.props.subHeading
+      subHeading = this.props.subHeading,
+      backgroundImage=this.props.backgroundImage
 
     return (
-      <header className="masthead" style={{ backgroundImage: `url(${BackgroundImage})` }}>
+      <header className="masthead" style={{ backgroundImage: `url(${backgroundImage})` }}>
         <div className="overlay"></div>
         <div className="container">
           <div className="row">

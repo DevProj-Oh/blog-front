@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 class Navigation extends React.Component {
 
@@ -19,6 +20,7 @@ class Navigation extends React.Component {
     const appName = this.props.appName
 
     return (
+
       <nav className="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div className="container">
           <a className="navbar-brand" href="index.html">{appName}</a>
@@ -28,10 +30,10 @@ class Navigation extends React.Component {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               {
-                this.state.menu.map((item,i) => {
+                this.state.menu.map((item, i) => {
                   return (
                     <li className="nav-item" key={i}>
-                      <a className="nav-link" href={item.path}>{item.title}</a>
+                      <Link to={item.path}>{item.title}</Link>
                     </li>
                   )
                 })
