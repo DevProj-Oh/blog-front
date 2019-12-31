@@ -5,8 +5,8 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import 'startbootstrap-clean-blog/css/clean-blog.min.css'
 
-import AboutBgImg from 'startbootstrap-clean-blog/img/about-bg.jpg'
 import Navigation from '../component/Navigation'
+import Header from '../component/Header'
 
 class App extends React.Component {
 
@@ -18,26 +18,11 @@ class App extends React.Component {
   }
 
   render() {
-    let headerStyle = {
-      backgroundImage: `url(${AboutBgImg})`,
-    };
+
     return (
       <div>
         <Navigation appName={this.state.appName} />
-
-        <header className="masthead" style={headerStyle}>
-          <div className="overlay"></div>
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-8 col-md-10 mx-auto">
-                <div className="page-heading">
-                  <h1>About Me</h1>
-                  <span className="subheading">This is what I do.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>
+        <Header mainHeading="关于" subHeading="关于-副标题" />
       </div>
     )
   }
