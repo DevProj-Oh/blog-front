@@ -1,12 +1,13 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 class Pager extends React.Component {
 
   render() {
     return (
       <div className="clearfix">
-        <a className="btn btn-primary " href={`/home?page=${this.props.prevPage}`}>上一页</a>
-        <a className="btn btn-primary float-right" href={`/home?page=${this.props.nextPage}`}>下一页</a>
+        <Link className="btn btn-primary" to={`/home/page/${this.props.prevPage}`}>上一页</Link>
+        <Link className="btn btn-primary float-right" to={`/home/page/${this.props.nextPage}`}>下一页</Link>
       </div>
     )
   }

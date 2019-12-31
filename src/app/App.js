@@ -27,12 +27,11 @@ class App extends React.Component {
       <Router>
         <Navigation appName={this.state.appName} turnPage={this.turnPage} />
         <Switch>
-          <Route exact path="/">
-            <Home appName={this.state.appName} />
-          </Route>
-          <Route exact path="/home">
-            <Home appName={this.state.appName} />
-          </Route>
+          <Route
+            exact
+            path={["/", "/home", "/home/page/:page_num"]}
+            render={({ match }) => <Home match={match} appName={this.state.appName} />}
+          />
           <Route path="/about">
             <About />
           </Route>

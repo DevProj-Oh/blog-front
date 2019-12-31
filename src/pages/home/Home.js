@@ -10,29 +10,22 @@ class Home extends React.Component {
 
   constructor(props) {
     super(props)
+
     this.state = {
       articles: [],
-      pages: {
-        prevPage: 0,
-        nextPage: 0,
-      }
+      prevPage: 0,
+      nextPage: 0,
     }
+  }
 
-    axios.get('/articles')
-      .then((res) => {
-        const data = res.data
+  componentDidMount() {
+    this.updateArticlesData()
+  }
 
-        this.setState({
-          articles: data.articles,
-          pages: {
-            prevPage: data.pages.prev_page,
-            nextPage: data.pages.next_page,
-          }
-        })
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.page_num !== this.props.match.params.page_num) {
+      this.updateArticlesData()
+    }
   }
 
   render() {
@@ -60,12 +53,29 @@ class Home extends React.Component {
                   )
                 })
               }
-              <Pager prevPage={this.state.pages.prevPage} nextPage={this.state.pages.nextPage} />
+              <Pager prevPage={this.state.prevPage} nextPage={this.state.nextPage} />
             </div>
           </div>
         </div>
       </div>
     )
+  }
+
+  updateArticlesData() {
+    const page = this.props.match.params.page_num ?? 1
+    axios.get('/articles', { page: page })
+      .then((res) => {
+        const data = res.data
+
+        this.setState({
+          articles: data.articles,
+          prevPage: data.pages.prev_page,
+          nextPage: data.pages.next_page,
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 }
 
