@@ -28,10 +28,10 @@ class App extends React.Component {
         <Navigation appName={this.state.appName} turnPage={this.turnPage} />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home appName={this.state.appName} />
           </Route>
           <Route exact path="/home">
-            <Home />
+            <Home appName={this.state.appName} />
           </Route>
           <Route path="/about">
             <About />

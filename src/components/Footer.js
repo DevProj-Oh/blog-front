@@ -12,11 +12,11 @@ class Footer extends React.Component {
         },
         {
           icon: "fa-twitter",
-          url: "#",
+          url: "/#",
         },
         {
           icon: "fa-facebook-f",
-          url: "#",
+          url: "/#",
         },
       ],
     }
@@ -33,14 +33,16 @@ class Footer extends React.Component {
               <ul className="list-inline text-center">
                 {
                   this.state.links.map((link, i) => {
-                    return (<li className="list-inline-item">
-                      <a href={link.url}>
-                        <span className="fa-stack fa-lg">
-                          <i className="fas fa-circle fa-stack-2x"></i>
-                          <i className={`fab ${link.icon} fa-stack-1x fa-inverse`}></i>
-                        </span>
-                      </a>
-                    </li>)
+                    return (
+                      <li className="list-inline-item" key={i}>
+                        <a href={link.url}>
+                          <span className="fa-stack fa-lg">
+                            <i className="fas fa-circle fa-stack-2x"></i>
+                            <i className={`fab ${link.icon} fa-stack-1x fa-inverse`}></i>
+                          </span>
+                        </a>
+                      </li>
+                    )
                   })
                 }
               </ul>
