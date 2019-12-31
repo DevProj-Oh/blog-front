@@ -1,12 +1,13 @@
 import React from 'react'
+
 import 'popper.js/dist/popper.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import 'startbootstrap-clean-blog/css/clean-blog.min.css'
 
-import Navigation from '../component/Navigation'
-import Header from '../component/Header'
+import Navigation from '../components/Navigation'
+import Header from '../components/Header'
 
 class App extends React.Component {
 
