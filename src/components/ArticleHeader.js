@@ -5,7 +5,7 @@ class ArticleHeader extends React.Component {
 
   render() {
 
-    const { title, category, updated_at } = this.props
+    const { title, category_name, updated_at } = this.props
 
     return (
       <header className="masthead" style={{ backgroundImage: `url(${BackgroundImage})` }}>
@@ -16,7 +16,7 @@ class ArticleHeader extends React.Component {
               <div className="post-heading">
                 <h1>{title}</h1>
                 <span className="meta">分类：
-                <a className="pr-2" href="/#">{category}</a>
+                <a className="pr-2" href="/#">{category_name}</a>
                   更新于：{updated_at}</span>
               </div>
             </div>

@@ -43,7 +43,7 @@ class Home extends React.Component {
                 this.state.articles.map((article, i) => {
                   return (
                     <div className="post-preview" key={i}>
-                      <a href="post.html">
+                      <a href={`/articles/${article.article_id}/${article.title}`}>
                         <h2 className="post-title">{article.title}</h2>
                         <h3 className="post-subtitle">{article.summary}</h3>
                       </a>

@@ -11,6 +11,7 @@ import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import Home from '../pages/home/Home'
 import About from '../pages/about/About'
+import Article from '../pages/article/Article'
 
 class App extends React.Component {
 
@@ -27,14 +28,22 @@ class App extends React.Component {
       <Router>
         <Navigation appName={this.state.appName} turnPage={this.turnPage} />
         <Switch>
-          <Route
-            exact
+
+          <Route exact
             path={["/", "/home", "/home/page/:page_num"]}
             render={({ match }) => <Home match={match} appName={this.state.appName} />}
           />
-          <Route path="/about">
-            <About />
-          </Route>
+
+          <Route exact
+            path="/articles/:article_id/:article_title"
+            render={({ match }) => <Article match={match} />}
+          />
+
+          <Route exact
+            path="/about"
+            component={About}
+          />
+
         </Switch>
 
         <Footer appName={this.state.appName} />
